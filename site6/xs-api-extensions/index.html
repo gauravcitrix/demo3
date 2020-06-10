@@ -1,0 +1,1192 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Citrix Hypervisor SDK">
+      
+      
+        <link rel="canonical" href="https://developer-docs.citrix.com/xs-api-extensions/">
+      
+      
+      <link rel="shortcut icon" href="https://citrix.com/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Citrix Hypervisor Management API Extensions - Citrix Hypervisor SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d890a8da.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fdbf4049.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../css/excess.css">
+    
+      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#citrix-hypervisor-management-api-extensions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://developer-docs.citrix.com" title="Citrix Hypervisor SDK"
+      class="md-header-nav__button md-logo" aria-label="Citrix Hypervisor SDK">
+      
+      <img src="https://developer-docs.citrix.com/_static/Citrix_Logo_Black.png" width="75px" height="28.275px">
+      
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+      <span class="md-header-nav__topic">
+        
+      </span>
+      <span class="md-header-nav__topic md-ellipsis">
+        
+        Citrix Hypervisor SDK
+        
+      </span>
+    </div>
+    
+    <!--</div>                       <!-  editing for  feedback ->
+	 <a href="https://github.com/citrix-gaurav-yadav/exercise2/issues/new" id="citrix_feedback2" class="md-header-nav__button md-icon" title="Feedback"style="margin-right:30px;" >         
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128 272c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>
+    </a>        
+      <script>
+	   var ft=document.getElementById("citrix_feedback2");
+	   var tf=window.location.href;
+	   tf=encodeURIComponent(tf);
+	   var tmp="This is the URL of the page for which you  raised  the issue.";
+	   var tmp1="Thanks for filing an issue.Please attach all the required information in detail.";
+	   ft.href=ft.href+"?body="+tf+"%0A"+tmp+"%0A"+tmp1;
+	   </script>	 -->
+    
+    <label class="md-header-nav__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+    </label>
+    
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    <div class="md-header-nav__source">
+      
+<a href="https://github.com/gauravcitrix/material/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+                                <!- editing for feedback ->
+	  	        <!-- <div class="rating"> 
+                <h2>Was the article helpful?</h2>				 
+              
+               <div class="like grow">
+            <a href="#"><i class="fa fa-thumbs-up fa-3x like"  aria-hidden="true"></i></a>
+              </div>
+            <div class="dislike grow">
+             <a href="https://github.com/citrix-gaurav-yadav/exercise2/issues/new" id="like_dislike" onclick="feedbackloader(this.id);"><i class="fa fa-thumbs-down fa-3x dislike" aria-hidden="true"></i></a>
+             </div>
+             </div>		-->
+			 
+			
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://developer-docs.citrix.com" title="Citrix Hypervisor SDK" class="md-nav__button md-logo" aria-label="Citrix Hypervisor SDK">
+      
+  <img src="https://developer-docs.citrix.com/_static/Citrix_Logo_Black.png" alt="logo">
+
+    </a>
+    Citrix Hypervisor SDK
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gauravcitrix/material/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+	 <!--  -->
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+	  
+    
+	 <!--  -->
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+	  
+    
+	 <!--  -->
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+	  
+    
+	 <!--  -->
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../using/" title="Using" class="md-nav__link">
+      Using
+    </a>
+  </li>
+
+	  
+    
+	 <!--  -->
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../using-http/" title="Using HTTP" class="md-nav__link">
+      Using HTTP
+    </a>
+  </li>
+
+	  
+    
+	 <!--  -->
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Citrix Hypervisor Management API Extensions
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Citrix Hypervisor Management API Extensions" class="md-nav__link md-nav__link--active">
+      Citrix Hypervisor Management API Extensions
+    </a>
+    
+      	
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+			 
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vm-console-forwarding" class="md-nav__link">
+    VM console forwarding
+  </a>
+  
+    <nav class="md-nav" aria-label="VM console forwarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-access" class="md-nav__link">
+    Console access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-vnc-consoles-using-the-api" class="md-nav__link">
+    Retrieving VNC consoles using the API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-vnc-forwarding-for-linux-vm" class="md-nav__link">
+    Disabling VNC forwarding for Linux VM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paravirtual-linux-installation" class="md-nav__link">
+    Paravirtual Linux installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-xenstore-entries-to-vms" class="md-nav__link">
+    Adding xenstore entries to VMs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-enhancements" class="md-nav__link">
+    Security enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-settings-for-network-interfaces" class="md-nav__link">
+    Advanced settings for network interfaces
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced settings for network interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethtool-settings" class="md-nav__link">
+    ethtool settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous-settings" class="md-nav__link">
+    Miscellaneous settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internationalization-for-sr-names" class="md-nav__link">
+    Internationalization for SR names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-objects-from-xencenter" class="md-nav__link">
+    Hiding objects from XenCenter
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+	  
+    
+	 <!--  -->
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../xc-api-extensions/" title="XenCenter API Extension" class="md-nav__link">
+      XenCenter API Extension
+    </a>
+  </li>
+
+	  
+    
+	 <!--                          <!- editing  for feedback system ->
+      <a href="https://github.com/citrix-gaurav-yadav/exercise2/issues/new" id="citrix_feedback1"  onclick="myfunc()" class="button6">Feedback</a>
+	  
+    
+  </ul>
+</nav>
+                                  <!- editing  for feedback system ->
+	   <!-- <script>
+	   var ft=document.getElementById("citrix_feedback1");
+	   var tf=window.location.href;
+	   tf=encodeURIComponent(tf);
+	   var tmp="This is the URL of the page for which you  raised  the issue.";
+	   var tmp1="Thanks for filing an issue.Please attach all the required information in detail.";
+	   ft.href=ft.href+"?body="+tf+"%0A"+tmp+"%0A"+tmp1;
+	   </script>    -->     
+                  </div>
+                </div>
+              </div>
+                               
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">    <!- editing for feedback ->
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+				   <span style="font-weight:bold; font-size:15px; padding-left:12px;">Was this article helpful?</span> 
+	  	        <div class="rating"> 
+               <div class="like grow">
+            <a href="#" id="__like" title="Yes"><i class="fa fa-thumbs-up like"  aria-hidden="true"></i></a>
+              </div>
+            <div class="dislike grow">
+             <a href="#" id="like_dislike" onclick="make_appear('feedback_id')" title="No"><i class="fa fa-thumbs-down dislike" aria-hidden="true"></i></a>
+             </div>
+			   <div id="feedback_id" class="feedback">
+               <a href="https://github.com/citrix-gaurav-yadav/exercise2/issues/new" id="citrix_feedback11"  style="margin-bottom:20px;"onclick="feedbackloader(this.id);" class="button6">Provide Feedback<i style="margin-left:10px;"class="fa fa-external-link" aria-hidden="true"></i></a>
+                </div>
+             </div>	
+                    	
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+			 
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vm-console-forwarding" class="md-nav__link">
+    VM console forwarding
+  </a>
+  
+    <nav class="md-nav" aria-label="VM console forwarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-access" class="md-nav__link">
+    Console access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-vnc-consoles-using-the-api" class="md-nav__link">
+    Retrieving VNC consoles using the API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-vnc-forwarding-for-linux-vm" class="md-nav__link">
+    Disabling VNC forwarding for Linux VM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paravirtual-linux-installation" class="md-nav__link">
+    Paravirtual Linux installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-xenstore-entries-to-vms" class="md-nav__link">
+    Adding xenstore entries to VMs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-enhancements" class="md-nav__link">
+    Security enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-settings-for-network-interfaces" class="md-nav__link">
+    Advanced settings for network interfaces
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced settings for network interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethtool-settings" class="md-nav__link">
+    ethtool settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous-settings" class="md-nav__link">
+    Miscellaneous settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internationalization-for-sr-names" class="md-nav__link">
+    Internationalization for SR names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-objects-from-xencenter" class="md-nav__link">
+    Hiding objects from XenCenter
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gauravcitrix/material/edit/master/docs/xs-api-extensions.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="citrix-hypervisor-management-api-extensions">Citrix Hypervisor Management API extensions<a class="headerlink" href="#citrix-hypervisor-management-api-extensions" title="Permanent link">&para;</a></h1>
+<p>The Management API is a general and comprehensive interface to managing the
+life-cycles of virtual machines, and offers a lot of flexibility in the
+way that Management API providers may implement specific functionality (for example,
+storage provisioning, or console handling). Citrix Hypervisor has several
+extensions which provide useful functionality used in our own
+XenCenter interface. The workings of these mechanisms are described
+in this chapter.</p>
+<p>Extensions to the Management API are often provided by specifying <code>other-config</code>
+map keys to various objects. The use of this parameter indicates that
+the functionality is supported for that particular release of
+Citrix Hypervisor, but <em>not</em> as a long-term feature. We are constantly
+evaluating promoting functionality into the API, but this requires the
+nature of the interface to be well-understood. Developer feedback as to
+how you are using some of these extensions is always welcome to help us
+make these decisions.</p>
+<h2 id="vm-console-forwarding">VM console forwarding<a class="headerlink" href="#vm-console-forwarding" title="Permanent link">&para;</a></h2>
+<p>Most Management API graphical interfaces will want to gain access to the VM
+consoles, in order to render them to the user as if they were physical
+machines. There are several types of consoles available, depending on
+the type of guest or if the physical host console is being accessed:</p>
+<h3 id="console-access">Console access<a class="headerlink" href="#console-access" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Text</th>
+<th>Graphical</th>
+<th>Optimized graphical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>No</td>
+<td>VNC, using an API call</td>
+<td>RDP, directly from guest</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>Yes, through VNC and an API call</td>
+<td>No</td>
+<td>VNC, directly from guest</td>
+</tr>
+<tr>
+<td>Physical Host</td>
+<td>Yes, through VNC and an API call</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Hardware-assisted VMs, such as Windows, directly provide a graphical
+console over VNC. There is no text-based console, and guest networking
+is not necessary to use the graphical console. Once guest networking has
+been established, it is more efficient to setup Remote Desktop Access
+and use an RDP client to connect directly (this must be done outside of
+the XenAPI).</p>
+<p>Paravirtual VMs, such as Linux guests, provide a native text console
+directly. Citrix Hypervisor provides a utility (called <code>vncterm</code>) to
+convert this text-based console into a graphical VNC representation.
+Guest networking is not necessary for this console to function. As with
+Windows above, Linux distributions often configure VNC within the guest,
+and directly connect to it over a guest network interface.</p>
+<p>The physical host console is only available as a <code>vt100</code> console, which
+is exposed through the XenAPI as a VNC console by using <code>vncterm</code> in the
+control domain.</p>
+<p>RFB (Remote Framebuffer) is the protocol which underlies VNC, specified
+in <a href="http://www.realvnc.com/docs/rfbproto.pdf">The RFB Protocol</a>.
+Third-party developers are expected to provide their own VNC viewers,
+and many freely available implementations can be adapted for this
+purpose. RFB 3.3 is the minimum version which viewers must support.</p>
+<h3 id="retrieving-vnc-consoles-using-the-api">Retrieving VNC consoles using the API<a class="headerlink" href="#retrieving-vnc-consoles-using-the-api" title="Permanent link">&para;</a></h3>
+<p>VNC consoles are retrieved using a special URL passed through to the
+host agent. The sequence of API calls is as follows:</p>
+<ol>
+<li>
+<p>Client to Master/443: RPC: <code>Session.login_with_password()</code>.</p>
+</li>
+<li>
+<p>Master/443 to Client: Returns a session reference to be used with
+    subsequent calls.</p>
+</li>
+<li>
+<p>Client to Master/443: RPC: <code>VM.get_by_name_label()</code>.</p>
+</li>
+<li>
+<p>Master/443 to Client: Returns a reference to a particular VM (or the
+    "control domain" if you want to retrieve the physical host console).</p>
+</li>
+<li>
+<p>Client to Master/443: RPC: <code>VM.get_consoles()</code>.</p>
+</li>
+<li>
+<p>Master/443 to Client: Returns a list of console objects associated
+    with the VM.</p>
+</li>
+<li>
+<p>Client to Master/443: RPC: <code>VM.get_location()</code>.</p>
+</li>
+<li>
+<p>Returns a URI describing where the requested console is located. The
+    URIs are of the
+    form: <code>https://192.168.0.1/console?ref=OpaqueRef:c038533a-af99-a0ff-9095-c1159f2dc6a0</code>
+    or <code>https://192.168.0.1/console?uuid=026e34fe-f0f2-20ee-5344-46d1aa922d5b</code></p>
+</li>
+<li>
+<p>Client to 192.168.0.1: HTTP CONNECT "/console?ref=(...)". You will
+    also need to pass in "session_id=<session reference>" as a cookie.</p>
+</li>
+</ol>
+<p>The final HTTP CONNECT is slightly non-standard since the HTTP/1.1 RFC
+specifies that it should only be a host and a port, rather than a URL.
+Once the HTTP connect is complete, the connection can subsequently
+directly be used as a VNC server without any further HTTP protocol
+action.</p>
+<p>This scheme requires direct access from the client to the control
+domain's IP, and will not work correctly if there are Network Address
+Translation (NAT) devices blocking such connectivity. You can use the
+CLI to retrieve the console URI from the client and perform a
+connectivity check.</p>
+<p>Retrieve the VM UUID by running:</p>
+<pre><code class="bash">    xe vm-list params=uuid --minimal name-label=name
+</code></pre>
+
+<p>Retrieve the console information:</p>
+<pre><code class="bash">    xe console-list vm-uuid=uuid
+    uuid ( RO): 714f388b-31ed-67cb-617b-0276e35155ef
+    vm-uuid ( RO): 8acb7723-a5f0-5fc5-cd53-9f1e3a7d3069
+    vm-name-label ( RO): etch
+    protocol ( RO): RFB
+    location ( RO): https://192.168.0.1/console?ref=(...)
+</code></pre>
+
+<p>Use command-line utilities like <code>ping</code> to test connectivity to the IP
+address provided in the <code>location</code> field.</p>
+<h3 id="disabling-vnc-forwarding-for-linux-vm">Disabling VNC forwarding for Linux VM<a class="headerlink" href="#disabling-vnc-forwarding-for-linux-vm" title="Permanent link">&para;</a></h3>
+<p>When creating and destroying Linux VMs, the host agent automatically
+manages the <code>vncterm</code> processes which convert the text console into VNC. Advanced
+users who wish to directly access the text console can disable VNC
+forwarding for that VM. The text console can then only be accessed
+directly from the control domain directly, and graphical interfaces such
+as XenCenter will not be able to render a console for that VM.</p>
+<p>Before starting the guest, set the following parameter on the VM record:</p>
+<pre><code>xe vm-param-set uuid=uuid other-config:disable_pv_vnc=1
+</code></pre>
+<p>Start the VM.</p>
+<p>Use the CLI to retrieve the underlying domain ID of the VM with:</p>
+<pre><code>xe vm-list params=dom-id uuid=uuid --minimal
+</code></pre>
+<p>On the host console, connect to the text console directly by:</p>
+<pre><code>/usr/lib/xen/bin/xenconsole domain_id
+</code></pre>
+<p>This configuration is an advanced procedure, and we do not recommend
+that the text console is directly used for heavy I/O operations.
+Instead, connect to the guest over SSH or some other network-based
+connection mechanism.</p>
+<h2 id="paravirtual-linux-installation">Paravirtual Linux installation<a class="headerlink" href="#paravirtual-linux-installation" title="Permanent link">&para;</a></h2>
+<p>The installation of paravirtual Linux guests is complicated by the fact
+that a Xen-aware kernel must be booted, rather than simply installing
+the guest using hardware-assistance. This does have the benefit of
+providing near-native installation speed due to the lack of emulation
+overhead. Citrix Hypervisor supports the installation of several different
+Linux distributions, and abstracts this process as much as possible.</p>
+<p>To this end, a special bootloader known as <code>eliloader</code> is present in the
+control domain which reads various <code>other-config</code> keys in the VM record
+at start time and performs distribution-specific installation behavior.</p>
+<ul>
+<li>
+<p><code>install-repository</code> - Required. Path to a repository; 'http',
+    'https', 'ftp', or 'nfs'. Should be specified as would be used by
+    the target installer, but not including prefixes, for example,  method=.</p>
+</li>
+<li>
+<p><code>install-vnc</code> - Default: false. Use VNC where available during the
+    installation.</p>
+</li>
+<li>
+<p><code>install-vncpasswd</code> - Default: empty. The VNC password to use, when
+    providing one is possible using the command-line of the target
+    distribution.</p>
+</li>
+<li>
+<p><code>install-round</code> - Default: 1. The current bootloader round. Not to
+    be edited by the user.</p>
+</li>
+</ul>
+<h2 id="adding-xenstore-entries-to-vms">Adding xenstore entries to VMs<a class="headerlink" href="#adding-xenstore-entries-to-vms" title="Permanent link">&para;</a></h2>
+<p>Developers may wish to install guest agents into VMs which take special
+action based on the type of the VM. In order to communicate this
+information into the guest, a special Xenstore name-space known as
+<code>vm-data</code> is available which is populated at VM creation time. It is
+populated from the <code>xenstore-data</code> map in the VM record.</p>
+<p>Set the <code>xenstore-data</code> parameter in the VM record:</p>
+<pre><code>xe vm-param-set uuid=vm_uuid xenstore-data:vm-data/foo=bar
+</code></pre>
+<p>Start the VM.</p>
+<p>If it is a Linux-based VM, install the Citrix VM Tools and use the <code>xenstore-read</code> to verify that the node exists in xenstore.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Only prefixes beginning with <code>vm-data</code> are permitted, and anything not
+in this name-space will be silently ignored when starting the VM.</p>
+</blockquote>
+<h2 id="security-enhancements">Security enhancements<a class="headerlink" href="#security-enhancements" title="Permanent link">&para;</a></h2>
+<p>The control domain in Citrix Hypervisor has
+various security enhancements in order to harden it against attack from
+malicious guests. Developers should never notice any loss of correct
+functionality as a result of these changes, but they are documented here
+as variations of behavior from other distributions.</p>
+<ul>
+<li>
+<p>The socket interface, <code>xenstored</code>, access using <code>libxenstore</code>. Interfaces are restricted by <code>xs_restrict()</code>.</p>
+</li>
+<li>
+<p>The device <code>/dev/xen/evtchn</code>, which is accessed by calling
+    <code>xs_evtchn_open()</code> in <code>libxenctrl</code>. A handle can be restricted using
+    <code>xs_evtchn_restrict()</code>.</p>
+</li>
+<li>
+<p>The device <code>/proc/xen/privcmd</code>, accessed through
+    <code>xs_interface_open()</code> in <code>libxenctrl</code>. A handle is restricted using
+    <code>xc_interface_restrict()</code>. Some privileged commands are naturally
+    hard to restrict (for example,  the ability to make arbitrary hypercalls),
+    and these are simply prohibited on restricted handles.</p>
+</li>
+<li>
+<p>A restricted handle cannot later be granted more privilege, and so
+    the interface must be closed and re-opened. Security is only gained
+    if the process cannot subsequently open more handles.</p>
+</li>
+</ul>
+<p>The control domain privileged user-space interfaces can now be
+restricted to only work for certain domains. There are three interfaces
+affected by this change:</p>
+<ul>
+<li>
+<p>The <code>qemu</code> device emulation processes and <code>vncterm</code> terminal emulation processes run as a non-root user ID
+    and are restricted into an empty directory. They uses the
+    restriction API above to drop privileges where possible.</p>
+</li>
+<li>
+<p>Access to xenstore is rate-limited to prevent malicious guests from
+    causing a denial of service on the control domain. This is
+    implemented as a token bucket with a restricted fill-rate, where
+    most operations take one token and opening a transaction takes 20.
+    The limits are set high enough that they should never be hit when
+    running even a large number of concurrent guests under loaded
+    operation.</p>
+</li>
+<li>
+<p>The VNC guest consoles are bound only to the <code>localhost</code> interface,
+    so that they are not exposed externally even if the control domain
+    packet filter is disabled by user intervention.</p>
+</li>
+</ul>
+<h2 id="advanced-settings-for-network-interfaces">Advanced settings for network interfaces<a class="headerlink" href="#advanced-settings-for-network-interfaces" title="Permanent link">&para;</a></h2>
+<p>Virtual and physical network interfaces have some advanced settings that
+can be configured using the <code>other-config</code> map parameter. There is a set of custom ethtool settings and some miscellaneous settings.</p>
+<h3 id="ethtool-settings">ethtool settings<a class="headerlink" href="#ethtool-settings" title="Permanent link">&para;</a></h3>
+<p>Developers might wish to configure custom ethtool settings for physical
+and virtual network interfaces. This is accomplished with
+<code>ethtool-&lt;option&gt;</code> keys in the <code>other-config</code> map parameter.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Valid settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ethtool-rx</td>
+<td>Specify if RX checksumming is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-tx</td>
+<td>Specify if TX checksumming is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-sg</td>
+<td>Specify if scatter-gather is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-tso</td>
+<td>Specify if tcp segmentation offload is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-ufo</td>
+<td>Specify if UDP fragmentation offload is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-gso</td>
+<td>Specify if generic segmentation offload is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-autoneg</td>
+<td>Specify if autonegotiation is enabled</td>
+<td><code>on</code> or <code>true</code> to enable the setting, <code>off</code> or <code>false</code> to disable it</td>
+</tr>
+<tr>
+<td>ethtool-speed</td>
+<td>Set the device speed in Mb/s</td>
+<td>10, 100, or 1000</td>
+</tr>
+<tr>
+<td>ethtool-duplex</td>
+<td>Set full or half duplex mode</td>
+<td>half or full</td>
+</tr>
+</tbody>
+</table>
+<p>For example, to enable TX checksumming on a virtual NIC using the xe
+CLI:</p>
+<pre><code>xe vif-param-set uuid=&lt;VIF UUID&gt; other-config:ethtool-tx="on"
+</code></pre>
+<p>or:</p>
+<pre><code>xe vif-param-set uuid=&lt;VIF UUID&gt; other-config:ethtool-tx="true"
+</code></pre>
+<p>To set the duplex setting on a physical NIC to half duplex using the xe
+CLI:</p>
+<pre><code>xe vif-param-set uuid=&lt;VIF UUID&gt; other-config:ethtool-duplex="half"
+</code></pre>
+<h3 id="miscellaneous-settings">Miscellaneous settings<a class="headerlink" href="#miscellaneous-settings" title="Permanent link">&para;</a></h3>
+<p>You can also set a promiscuous mode on a VIF or PIF by setting the <code>promiscuous</code> key to <code>on</code>. For example, to enable promiscuous mode on a physical NIC using the xe CLI:</p>
+<pre><code>xe pif-param-set uuid=&lt;PIF UUID&gt; other-config:promiscuous="on"
+</code></pre>
+<p>or:</p>
+<pre><code>xe pif-param-set uuid=&lt;PIF UUID&gt; other-config:promiscuous="true"
+</code></pre>
+<p>The VIF and PIF objects have a <code>MTU</code> parameter that is read-only and
+provide the current setting of the maximum transmission unit for the
+interface. You can override the default maximum transmission unit of a
+physical or virtual NIC with the <code>mtu</code> key in the <code>other-config</code> map
+parameter. For example, to reset the MTU on a virtual NIC to use jumbo
+frames using the xe CLI:</p>
+<pre><code>xe vif-param-set uuid=&lt;VIF UUID&gt; other-config:mtu=9000
+</code></pre>
+<p>Note that changing the MTU of underlying interfaces is an advanced and
+experimental feature, and may lead to unexpected side-effects if you
+have varying MTUs across NICs in a single resource pool.</p>
+<h2 id="internationalization-for-sr-names">Internationalization for SR names<a class="headerlink" href="#internationalization-for-sr-names" title="Permanent link">&para;</a></h2>
+<p>The SRs created at install time now have an <code>other_config</code> key
+indicating how their names may be internationalized.</p>
+<p><code>other_config["i18n-key"]</code> may be one of</p>
+<ul>
+<li>
+<p><code>local-hotplug-cd</code></p>
+</li>
+<li>
+<p><code>local-hotplug-disk</code></p>
+</li>
+<li>
+<p><code>local-storage</code></p>
+</li>
+<li>
+<p><code>Citrix Hypervisor-tools</code></p>
+</li>
+</ul>
+<p>Additionally, <code>other_config["i18n-original-value-&lt;field name&gt;"]</code> gives
+the value of that field when the SR was created. If XenCenter sees
+a record where <code>SR.name_label</code> equals <code>other_config["i18n-original-value-name_label"]</code> (that is, the record has not changed since it was created during
+Citrix Hypervisor installation), then internationalization will be applied.
+In other words, XenCenter will disregard the current contents of
+that field, and instead use a value appropriate to the user's own
+language.</p>
+<p>If you change <code>SR.name_label</code> for your own purpose, then it no longer is
+the same as <code>other_config["i18n-original-value-name_label"]</code>. Therefore,
+XenCenter does not apply internationalization, and instead
+preserves your given name.</p>
+<h2 id="hiding-objects-from-xencenter">Hiding objects from XenCenter<a class="headerlink" href="#hiding-objects-from-xencenter" title="Permanent link">&para;</a></h2>
+<p>Networks, PIFs, and VMs can be hidden from XenCenter by adding the
+key <code>HideFromXenCenter=true</code> to the <code>other_config</code> parameter for the object. This capability
+is intended for ISVs who know what they are doing, not general use by
+everyday users. For example, you might want to hide certain VMs because
+they are cloned VMs that shouldn't be used directly by general users in
+your environment.</p>
+<p>In XenCenter, hidden Networks, PIFs, and VMs can be made visible,
+using the View menu.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>  
+	                                               <!- editing for feedback ->
+	  	  
+		      
+	  	        <div class="rating1"> 
+				<span style="font-weight:bold; font-size:15px; text-align:center;">Was this article helpful?</span> </br>
+               <div class="like grow">
+            <a href="#" id="_like" title="Yes" ><i  class="fa fa-thumbs-up like"  aria-hidden="true"></i></a>
+              </div>
+            <div class="dislike grow">
+             <a href="#" id="like_dislike1" onclick="make_appear('feedback_id1')" title="No"><i class="fa fa-thumbs-down dislike" aria-hidden="true"></i></a>
+             </div>
+			   <div id="feedback_id1" class="feedback">
+               <a href="https://github.com/citrix-gaurav-yadav/exercise2/issues/new" id="citrix_feedback12"  style="margin-bottom:20px;"onclick="feedbackloader(this.id);" class="button6">Provide Feedback<i style="margin-left:10px;"class="fa fa-external-link" aria-hidden="true"></i></a>
+                </div>
+             </div>	
+			 
+	   <!--<div class="feedback">
+       <a href="https://github.com/citrix-gaurav-yadav/exercise2/issues/new" id="citrix_feedback"  style="margin-bottom:20px; padding:10px;"onclick="myfunc();feedbackloader(this.id);" class="button6">Feedback</a>
+       </div>-->
+	    
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	   <script>
+	   $("#_like,#__like").click(function(event){
+        event.preventDefault();
+	    document.getElementById("like_dislike").style.color="black";
+		document.getElementById("like_dislike1").style.color="black";
+		this.style.color="green";
+         });
+		$("#like_dislike,#like_dislike1").click(function(event){
+        event.preventDefault();
+		document.getElementById("_like").style.color="black";
+		document.getElementById("__like").style.color="black";
+		this.style.color="red";
+         });
+	   	function  make_appear(id)
+	   {
+	     var tt=document.getElementById(id);
+		 tt.style.display="block";
+	   }
+	   function feedbackloader(id)
+	   {
+	   var ft=document.getElementById(id);
+	   var tf=window.location.href;
+	   tf=encodeURIComponent(tf);
+	   var tmp="[Provide your feedback here]";
+	   var tmp1="Docs URL:";
+	   ft.href=ft.href+"?body="+tmp+"%0A"+"%0A"+"%0A"+"%0A"+tmp1+tf;
+	   }
+	   </script>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../using-http/" title="Using HTTP" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using HTTP
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../xc-api-extensions/" title="XenCenter API Extension" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                XenCenter API Extension
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 1999-2020 Citrix Systems, Inc. All rights reserved. 
+          </div>
+        
+        <!---Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>-->
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://www.youtube.com/channel/UCiOupk9QF6jdk3EDKTHDykA" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://github.com/citrix" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://twitter.com/citrixdeveloper" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/company/citrix/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.606193c2.min.js"></script>
+      <script src="../assets/javascripts/bundle.7af7e239.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: {"tabs": false},
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../js/tmp.js"></script>
+      
+    
+  </body>
+</html>
